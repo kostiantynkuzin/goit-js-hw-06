@@ -1,16 +1,9 @@
-const refs = {
-  style: document.querySelector("style"),
-  input: document.querySelector("input"),
-  dataInput: document.querySelector('input[data-length="6"]'),
-};
+const input = document.querySelector("#validation-input");
 
-refs.dataInput.addEventListener("blur", inputBlur);
+input.addEventListener("blur", inputBlur);
 
-function inputBlur(event) {
-  console.log(event.currentTarget.value.length);
-  if (
-    event.currentTarget.value.length === Number(refs.dataInput.dataset.length)
-  ) {
-    console.log(refs.input.setAttribute("id", "#validation-input.valid"));
-  }
+function inputBlur() {
+  if (+input.value.length === +input.dataset.length) {
+    return input.classList.remove("invalid"), input.classList.add("valid");
+  } else input.classList.remove("valid"), input.classList.add("invalid");
 }
