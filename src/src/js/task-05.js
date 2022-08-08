@@ -1,12 +1,11 @@
-const refs = {
-  input: document.querySelector("#name-input"),
+const input = document.querySelector("#name-input");
 
-  span: document.querySelector("#name-output"),
-};
+const span = document.querySelector("#name-output");
 
-refs.input.addEventListener("input", inputText);
+input.addEventListener("input", inputText);
 
 function inputText(event) {
-  console.log(event.currentTarget.value);
-  refs.span.textContent = event.currentTarget.value;
+  if (input.value === "") {
+    return (span.textContent = "Anonymos");
+  } else span.textContent = event.currentTarget.value;
 }
