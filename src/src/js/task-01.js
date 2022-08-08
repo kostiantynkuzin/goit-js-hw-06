@@ -1,7 +1,10 @@
-const nav = document.querySelector("#categories");
-const categories = nav.children;
-console.log("Number of categories:", categories.length);
-for (let i = 0; i < categories.length; i++) {
-  console.log("Category:", categories[i].firstElementChild.textContent);
-  console.log("Elements:", categories[i].lastElementChild.children.length);
-}
+const navEl = document.querySelector("#categories");
+//console.log(`Number of categories: ${navEl.children.length}`);
+
+const itemsEl = navEl.querySelectorAll("li.item");
+//console.log(itemsEl);
+
+itemsEl.forEach((item) => {
+  console.log(`Category: ${item.firstElementChild.textContent}`);
+  console.log(`Elements: ${item.lastElementChild.children.length}`);
+});
