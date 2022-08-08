@@ -6,14 +6,13 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const elements = [];
-for (let i = 0; i < ingredients.length; i++) {
-  const option = ingredients[i];
+const elements = ingredients.map((option) => {
   const newEl = document.createElement("li");
   newEl.textContent = option;
   newEl.classList.add("item");
-  elements.push(newEl);
-}
+  return newEl;
+});
 console.log(elements);
+
 const navEl = document.querySelector("#ingredients");
 navEl.append(...elements);
