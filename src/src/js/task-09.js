@@ -5,13 +5,13 @@ const bodyEl = document.querySelector("body");
 const buttonEl = document.querySelector(".change-color");
 const spanEl = document.querySelector(".color");
 
-console.log(spanEl);
+//console.log(spanEl);
 
 buttonEl.addEventListener("click", changeColor);
+const randomColor = `${getRandomHexColor()}`;
 
-function changeColor(event) {
-  event.preventDefault();
-  bodyEl.style.backgroundColor = getRandomHexColor();
+function changeColor() {
+  bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
   spanEl.innerHTML = `${getRandomHexColor()}`;
-  console.log(getRandomHexColor());
+  console.log(randomColor);
 }
