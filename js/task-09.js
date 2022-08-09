@@ -8,10 +8,10 @@ const spanEl = document.querySelector(".color");
 //console.log(spanEl);
 
 buttonEl.addEventListener("click", changeColor);
-const randomColor = `${getRandomHexColor()}`;
 
 function changeColor() {
-  bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
-  spanEl.innerHTML = `${getRandomHexColor()}`;
+  const randomColor = `${getRandomHexColor()}`;
+  bodyEl.style.backgroundColor = randomColor;
+  spanEl.innerHTML = randomColor;
   console.log(randomColor);
 }
